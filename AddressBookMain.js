@@ -12,7 +12,8 @@ while (flag) {
     console.log("3. Edit ");
     console.log("4. Delete");
     console.log("5. Count contact");
-    console.log("6. exit");
+    console.log("6. Search ")
+    console.log("7. exit");
     let option = parseInt(prompt("Enter your choice : "));
 
     switch (option) {
@@ -32,6 +33,9 @@ while (flag) {
             console.log("Number of Contacts :" +contactDetails.length);
             break;
         case 6:
+            contactDetails = addressBook.searchContact(contactDetails);
+            break;
+        case 7:
             flag = false;
             break;
         default:
