@@ -2,24 +2,32 @@ const AddressBook = require("./AddressBook.js");
 const prompt = require('prompt-sync')();
 
 let addressBook = new AddressBook();
-let contactList = new Array();
+let contactDetails = new Array();
 flag = true;
 
 while (flag) {
 
-    console.log("1. insert contacts in Address Book");
-    console.log("2. display the list of Contact");
-    console.log("3. to exit");
+    console.log("1. insert");
+    console.log("2. display");
+    console.log("3. Edit ")
+    console.log("4. Delete")
+    console.log("5. exit");
     let option = parseInt(prompt("Enter your choice : "));
 
     switch (option) {
         case 1:
-            contactList = addressBook.insert(contactList);
+            contactDetails = addressBook.insert(contactDetails);
             break;
         case 2:
-            console.log(contactList);
+            console.log(contactDetails);
             break;
         case 3:
+            contactDetails = addressBook.editContact(contactDetails);
+            break;
+        case 4:
+            contactDetails = addressBook.deleteContact(contactDetails);
+            break;
+        case 5:
             flag = false;
             break;
         default:
@@ -27,4 +35,4 @@ while (flag) {
             flag = false;
             break;
     }
-}
+} 
