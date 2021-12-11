@@ -9,9 +9,10 @@ while (flag) {
 
     console.log("1. insert");
     console.log("2. display");
-    console.log("3. Edit ")
-    console.log("4. Delete")
-    console.log("5. exit");
+    console.log("3. Edit ");
+    console.log("4. Delete");
+    console.log("5. Count contact");
+    console.log("6. exit");
     let option = parseInt(prompt("Enter your choice : "));
 
     switch (option) {
@@ -28,6 +29,9 @@ while (flag) {
             contactDetails = addressBook.deleteContact(contactDetails);
             break;
         case 5:
+            console.log("Number of Contacts :" +contactDetails.length);
+            break;
+        case 6:
             flag = false;
             break;
         default:
